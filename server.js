@@ -27,12 +27,6 @@ app.use((req, res, next) => {
 })
 
 app.use(express.urlencoded({ extended: true })); // Parse form data
-mongoose.connect(process.env.MONGODB_URI) // Ensure correct database name
-  .then(() => console.log('Connected to MongoDB'))
-  .catch(err => {
-    console.error('Error connecting to MongoDB:', err);
-    // Handle connection errors appropriately
-  });
 
 const userSchema = new mongoose.Schema({
   Name: {
@@ -65,7 +59,15 @@ app.post('/submit-form', async (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`Server listening on port ${port}`);
-});
 
+mongoose.connect(process.env.MONGODB_URI) // Ensure correct database name
+  .then(() => {
+    console.log('Connected to MongoDB')
+    app.listen(port, () => {
+      console.log(`Server listening on port ${port}`);
+    });
+  })
+  .catch(err => {
+    console.error('Error connecting to MongoDB:', err);
+    // Handle connection errors appropriately
+  });
