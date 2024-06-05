@@ -1,14 +1,33 @@
 const express = require('express');
 const path = require('path');
+const fs = require('fs');
 const mongoose = require('mongoose');
+const { config } = require('dotenv');
 const port = 3019; // Adjust port if needed
-
+config();
 const app = express();
 app.use(express.json());
 app.use(express.static("public"));
 
+app.use((req, res, next) => {
+  try {
+      const publicFolderPath = path.join(process.cwd(), 'public');
+      const filePath = path.join(publicFolderPath, req.path);
+      const indexPath = path.join(filePath, 'index.html');
+      if (fs.existsSync(filePath) && fs.statSync(filePath).isFile() || fs.existsSync(indexPath) && fs.statSync(indexPath).isFile()) {
+          // File exists in public folder
+          res.sendFile(req.path, { root: './public' });
+      } else {
+          next();
+      }
+  } catch (e) {
+      console.log(e)
+      next()
+  }
+})
+
 app.use(express.urlencoded({ extended: true })); // Parse form data
-mongoose.connect('mongodb://127.0.0.1:27017/formdata2') // Ensure correct database name
+mongoose.connect(process.env.MONGODB_URI) // Ensure correct database name
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => {
     console.error('Error connecting to MongoDB:', err);
@@ -49,3 +68,4 @@ app.post('/submit-form', async (req, res) => {
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });
+
