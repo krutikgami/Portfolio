@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/4de0e741aa.js" crossorigin="anonymous"></script>
+    <!-- <script src="script.js"></script> -->
+  </head>
+  <body>
+    <div id="header">
+      <div class="container">
+        <nav>
+          <img src="images/logo.png" alt="#" class="logo" />
+          <ul id="sidemenu">
+            <li><a href="#header">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <i class="fas fa-times" onclick="closemenu()"></i>
+          </ul>
+          <i class="fas fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+          <p>Aspiring Java Developer</p>
+          <h1>Hi, I'm <span>Krutik</span> Gami</h1>
+        </div>
+      </div>
+    </div>
+    <div id="about">
+      <div class="container">
+        <div class="row">
+          <div class="about-col-1">
+            <img src="images/about_img.png" alt="#" />
+          </div>
+          <div class="about-col-2">
+            <h1 class="subtitle">About Me</h1>
+            <p class="about-para">
+              <br>👋 Hello! I'm Krutik Gami, a passionate learner on the journey to
+              becoming a skilled Java Full Stack Developer.<br><br>
+              🔍 About Me: I'vebeen immersing myself in the world of Java Full Stack Development,
+              delving into both front-end and back-end technologies to build
+              robust and dynamic web applications. Every day is a new adventure
+              as I explore the Complexities of Java programming, mastering its
+              principles and best practices.<br><br>
+              🔍 Currently: I'm exploring theSpring Framework aiming to continuously improve efficiency and
+              scalability.<br><br>
+              🌟 Let's connect and explore how we can collaborate
+              on exciting projects or discuss the latest trends in Java
+              development. I'm always eager to exchange ideas and learn from
+              fellow professionals in the tech community!
+            </p>
+            <div class="tab-titles">
+                <p class="tab-links active-links" onclick="opentab('skills')">Skills</p>
+                <p class="tab-links" onclick="opentab('experience')">Experiences</p>
+                <p class="tab-links" onclick="opentab('education')">Education</p>
+            </div>
+            <div class="tab-contents active-tab" id="skills">
+                <ul>
+                    <li><span>Java Development</span><br>Building Java Swing applications</li>
+                    <li><span>Web Development</span><br>Website Development</li>
+                    <li><span>App Development</span><br>Building Android apps</li>
+                </ul>
+            </div>
+            <div class="tab-contents" id="experience">
+                <ul>
+                    <li><span>Fresher</span></li>
+                    <p>Currently searching for internship.</p>
+                    
+                </ul>
+            </div>
+            <div class="tab-contents" id="education">
+                <ul>
+                    <li><span>2022-2026 Computer Engineering</span><br>LDRP-ITR,Gandhinagar</li>
+                    <li><span>2020-2022 HSC</span><br>Ascent School of Science</li>
+                    <li><span>2020 SSC</span><br>Aeon English Medium School</li>
+                </ul>
+            </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <!-----------services----------->
+    <!-- <div id="services">
+      <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+          <div>
+            <h2>Currently No services</h2>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <!----Projects------>
+    <div id="projects">
+      <div class="container">
+        <h1 id="sub-title">My Projects</h1>
+        <div class="work-list">
+          <div class="work">
+            <img src="images/project.png" alt="#">
+            <div class="layer">
+              <h3>Password Generator</h3>
+              <p>It helps you to generate password of your desired length with lowercase,uppercase,numbers and symbols</p>
+              <a href="https://github.com/krutikgami/PasswordGenerator" target="_blank"><i class="fa-brands fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!------contact----------->
+    <div id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="contact-left">
+            <h1 class="sub-title">Contact Me</h1>
+            <p><i class="fa-solid fa-envelope"></i>krutikgami354@gmail.com</p>
+            <div class="social-icons">
+              <a href="https://github.com/krutikgami" class="github"><i class="fa-brands fa-square-github"></i></a>
+              <a href="https://x.com/krutik_gami" class="twitter"><i class="fa-brands fa-square-x-twitter"></i></a>
+              <a href="https://www.instagram.com/krutik_patel01/" class="instagram"><i class="fa-brands fa-square-instagram"></i></a>
+              <a href="https://www.linkedin.com/in/krutik-gami-168477257/" class="linkedin"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+            <button class="btn btn2" onclick="settext()" id="cv">Download CV</button>
+            <span id="response1"></span>
+          </div>
+          <div class="contact-right">
+            <form id="contact-form">
+              <input type="text" name="Name" placeholder="Your Name" id="Name" required>
+              <input type="email" name="email" placeholder="Your Email" id="email" required >
+              <textarea name="Message" rows="6" placeholder="Your Message" id="Message" required></textarea>
+              <button type="submit" class="btn2" id="submit">Submit</button>
+            </form>
+            <span id="response"></span>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>Copyright &copy; Krutik Gami. All rights reserved.</p>
+      </div>
+    </div>
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        function opentab(tabname){
+            for(tablink of tablinks){
+              tablink.classList.remove("active-link")
+
+            }
+            for(tabcontent of tabcontents){
+              tabcontent.classList.remove("active-tab")
+              
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+
+        // side menu
+
+        var sidemenu = document.getElementById("sidemenu");
+
+        function openmenu(){
+          sidemenu.style.right = "0";
+        }
+
+        function closemenu(){
+          sidemenu.style.right = "-200px";
+        }
+
+       // cv button
+
+       const cv = document.getElementById("response1");
+
+       function settext(){
+        cv.textContent = "Currently unavailable!"
+       }
+       setTimeout(() => {
+               cv.textContent= "";
+        }, 3000);
+
+        /* mongodb connect */
+
+        
+        document.addEventListener('DOMContentLoaded', ()=>{
+          const form = document.getElementById('contact-form');
+          form.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const formData = (new FormData(form));
+
+            const urlEncodedData = new URLSearchParams(formData).toString();
+            fetch("/submit-form", {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+              },
+              body: urlEncodedData
+            })
+            .then(response => {
+              if(response.status==200){
+                return response.text()
+              }else{
+                throw new Error("Invalid status code");
+              }
+            })
+            .then(data => {
+              document.getElementById('response').textContent = 'Form submitted successfully.';
+              setTimeout(()=>{
+                document.getElementById('response').textContent = "";
+                form.reset();
+              },3000);
+            })
+            .catch(error => {
+              console.error('Error submitting form:', error);
+              document.getElementById('response').textContent = 'An error occurred.';
+            });
+          });
+        })
+    </script> 
+  </body>
+</html>
