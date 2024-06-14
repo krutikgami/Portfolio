@@ -89,7 +89,6 @@ nav ul li a:hover::after{
 
 .about-col-1 {
     flex-basis: 35%;
-   
 }
 
 .about-col-1 img {
@@ -173,18 +172,6 @@ nav ul li a:hover::after{
     display: block;
 }
 
-/*---------------services------------*/
-/* #services{
-    padding: 30px 0;
-
-}
-.services-list{
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-    grid-gap:40px;
-    margin-top: 50px;
-    
-} */
 
 /*-----------project------------*/
 #project{
@@ -195,63 +182,67 @@ nav ul li a:hover::after{
     text-align: center;
 }
 .work-list{
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-    grid-gap:40px;
-    margin-top: 50px;
+     display: grid;
+     grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+     grid-gap:40px;
+     margin-top: 50px;
+ }
+ .work{
+     border-radius: 10px;
+     position: relative;
+     overflow: hidden;
+ }
+ .work img{
+    width: 50%;
+     height: auto;
+     border-radius: 10px;
+     display: block;
+   /* transition: transform 0.5s; */    
+ }
+ .layer{
+     height: auto;
+     width: 50%;
+     height: auto;
+     background: linear-gradient(rgba(0,0,0,0.6),#ff004f);
+     border-radius: 10px;
+     position: absolute;
+     left: 0;
+     bottom: 0;
+     overflow: hidden;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+     padding: 0 40px;
+     text-align: center;
+     font-size: 14px;
+     transition: height 0.5s;
+ }
+ .layer h3{
+     font-weight: 500;
+     margin-bottom: 20px;
+ }
+ .layer a{
+     margin-top: 20px;
+     color: #ff004f;
+     text-decoration: none;
+     font-size: 18px;
+     line-height: 60px;
+     background: #fff;
+     width: 60px;
+     height: 60px;
+     border-radius: 50%;
+     text-align: center;
+ }
+ .work:hover img{
+     transform: scaleY(-3px);
+ }
+ .work:hover .layer{
+     height: 100%;
 }
-.work{
-    border-radius: 10px;
-    position: relative;
-    overflow: hidden;
-}
-.work img{
-    width: 100%;
-    border-radius: 10px;
-    display: block;
-   /* transition: transform 0.5s; */
-    
-}
-.layer{
-    width: 100%;
-    height: 0;
-    background: linear-gradient(rgba(0,0,0,0.6),#ff004f);
-    border-radius: 10px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0 40px;
-    text-align: center;
-    font-size: 14px;
-    transition: height 0.5s;
-}
-.layer h3{
-    font-weight: 500;
-    margin-bottom: 20px;
-}
-.layer a{
-    margin-top: 20px;
-    color: #ff004f;
-    text-decoration: none;
-    font-size: 18px;
-    line-height: 60px;
-    background: #fff;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    text-align: center;
-}
-.work:hover img{
-    transform: scaleY(-3px);
-}
-.work:hover .layer{
-    height: 100%;
-}
+.work:not(:hover) .layer{
+    height: 0%;
+ }
 
 /*------contact------*/
 .contact-left{
@@ -388,6 +379,7 @@ nav .fas{
     } 
     .subtitle{
         font-size: 40px;
+        text-align: center;
      }
      .about-col-1, .about-col-2{
         flex-basis: 100%;
@@ -398,6 +390,13 @@ nav .fas{
      .about-col-2{
         font-size: 14px;
      }
+     .about-col-1 img {
+        width: 60%;
+        height: auto;
+        margin-left: 18%;
+        border-radius: 20px;
+        box-shadow: 0 10px 20px rgb(0, 191, 255);
+    }
      .tab-links{
         font-size: 15px;
         margin-right: 20px;
@@ -410,6 +409,35 @@ nav .fas{
         font-size: 14px;
         width: 100%;
      }
+     .layer h3{
+        font-size: 10px;
+        font: bold;
+        margin-bottom: 7px;
+    }
+    .layer p{
+        font-size: 10px;
+        text-align: left;
+    }
+    .layer a{
+        margin-top: 15px;
+        color: #ff004f;
+        text-decoration: none;
+        font-size: 12px;
+        line-height: 40px;
+        background: #fff;
+        width: 40px;
+        height: 40px;
+        justify-content: center;
+        border-radius: 50%;
+        text-align: center;
+    }
+    #sub-title{
+        font-size: 40px;
+        text-align: center;
+    }
+    form .btn2{
+        margin-left: 22%;
+    }
 
 }
 #response{
