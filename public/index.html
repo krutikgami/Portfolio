@@ -6,7 +6,8 @@
     <title>Personal Portfolio</title>
     <link rel="stylesheet" href="style.css" />
     <script src="https://kit.fontawesome.com/4de0e741aa.js" crossorigin="anonymous"></script>
-    <!-- <script src="script.js"></script> -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
   </head>
   <body>
     <div id="header">
@@ -16,7 +17,7 @@
           <ul id="sidemenu">
             <li><a href="#header">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#">Skills</a></li>
+            <li><a href="#container">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
             <i class="fas fa-times" onclick="closemenu()"></i>
@@ -24,8 +25,8 @@
           <i class="fas fa-bars" onclick="openmenu()"></i>
         </nav>
         <div class="header-text">
-          <p>Aspiring Java Developer</p>
-          <h1>Hi, I'm <span>Krutik</span> Gami</h1>
+          <h1>Hi, I'm <span class="auto-type"></span></h1>
+          <p>Aspiring Java Developer.</p>
         </div>
       </div>
     </div>
@@ -83,7 +84,42 @@
       </div>
     </div>
     <!-----------Skills----------->
-  
+      <div id="skills">
+        <div id="container">
+          <h1 class="title-skill">My Skills</h1>
+          <div class="row1">
+            <div class="left">
+              <h5 class="left-title">Tech Stacks</h5>
+              <img src="images/html-5.png" alt="#">
+              <img src="images/css-3.png" alt="#">
+              <img src="images/js.png" alt="#">
+              <img src="images/atom.png" alt="#">
+              <img src="images/java.png" alt="#">
+              <img src="images/c-.png" alt="#">
+              <img src="images/php.png" alt="#">
+              <img src="images/nodejs.png" alt="#">
+              <img src="images/python.png" alt="#">
+              <img src="images/sql.png" alt="#">
+              <img src="images/C.png" alt="#">
+            </div>
+            <div class="right">
+              <h5 class="right-title">Tools I Use</h5>
+              <img src="images/intellij.png" alt="#">
+              <img src="images/visual-studio-code.png" alt="#">
+              <img src="images/pycharm.png" alt="#">
+              <img src="images/jupyter.png" alt="#">
+              <img src="images/git.png" alt="#">
+              <img src="images/github.png" alt="#">
+              <img src="images/mongodb.png" alt="#">
+              <img src="images/netbeans.png" alt="#">
+              <img src="images/ecllipse.png" alt="#">
+              <img src="images/mysql.png" alt="#">
+              <img src="images/postman.png" alt="#">
+              <img src="images/figma.png" alt="#">
+            </div>
+          </div>
+        </div>
+      </div>
     <!----Projects------>
     <div id="projects">
       <div class="container">
@@ -132,6 +168,14 @@
       </div>
     </div>
     <script>
+      // home section h1
+       var typed  = new Typed(".auto-type",{
+         strings: ["Krutik Gami"],
+         typeSpeed: 100,
+         backSpeed: 100,
+         loop: true 
+       })
+      // about section
         var tablinks = document.getElementsByClassName("tab-links");
         var tabcontents = document.getElementsByClassName("tab-contents");
         function opentab(tabname){
